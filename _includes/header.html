@@ -11,17 +11,17 @@
     <nav>
         <div id="main-nav">
             <h1 id="branding">
-                <a href="/">{{ site.name }}</a>
+                <a href="{{ site.baseurl }}">{{ site.name }}</a>
             </h1>
             <ul id="right-nav">
                 <li>
-                    <a href="/https/domains/">HTTPS</a>
+                    <a href="{{ site.baseurl }}/https/domains/">HTTPS</a>
                 </li>
                 <li>
-                    <a href="/analytics/domains/">Analytics</a>
+                    <a href="{{ site.baseurl }}/analytics/domains/">Analytics</a>
                 </li>
                 <li>
-                    <a href="/about/">About</a>
+                    <a href="{{ site.baseurl }}/about/">About</a>
                 </li>
                 <li>
                     <a href="https://github.com/18f/pulse/issues">Feedback</a>
@@ -34,15 +34,15 @@
 
     <nav id="menu-content">
       <ul>
-        <li><a href="/">Home</a></li>
+        <li><a href="{{ site.baseurl }}">Home</a></li>
         <li>
-            <a href="/https/domains/">HTTPS</a>
+            <a href="{{ site.baseurl }}/https/domains/">HTTPS</a>
         </li>
         <li>
-            <a href="/analytics/domains/">Analytics</a>
+            <a href="{{ site.baseurl }}/analytics/domains/">Analytics</a>
         </li>
         <li>
-            <a href="/about/">About</a>
+            <a href="{{ site.baseurl }}/about/">About</a>
         </li>
         <li>
             <a href="https://github.com/18f/pulse/issues">Feedback</a>
