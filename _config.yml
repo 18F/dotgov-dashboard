@@ -1,5 +1,8 @@
 # Site metadata.
 
+# 18F pages base url config
+baseurl: /pulse
+
 # Canonical URL
 url: https://pulse.cio.gov
 
