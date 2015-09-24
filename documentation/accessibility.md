@@ -17,7 +17,9 @@ For Pulse, `pa11y` will be checking .gov websites against the WCAG 2.0 AA Standa
 
 ### Eligibility
 
-[]
+Under section 508 (29 U.S.C. § 794 (d))[http://www.gpo.gov/fdsys/pkg/USCODE-2011-title29/html/USCODE-2011-title29-chap16-subchapV-sec794d.htm] all federal information technology for public and private use, must accessible by federal employees and members of the public with disabilities.
+
+This applies to all federal web sites with the exception of national security systems. All publicily availble .gov domains will be included in this tool.
 
 ### Data Dictionary
 
@@ -57,4 +59,17 @@ The quickest way to make sense of a `pa11y` report is to look at the aggregate c
 
 ### Caveats
 
-[]
+We recognize that the method for determining true accessibility is still mostly a manual proccess. We beleive this tool will be helpful in capturing common, technical errors in terms of accessibility, but it does not guarantee accessibility or inaccessibility to the listed sites. 
+
+Below are some of the limitations of the results from the HTML Code sniffer tool.
+
+- Text contrast ratio is not measured when an image is used as the background
+- Loss of focus is not reviewed by the tool
+- Alt text on `<img>` elements is not reviewed for accuracy 
+- Logical flow and layout is not reviewed beyond `<h>` tag order
+- Interactive elements built with JavaScript are not reviewed for accessibility
+- Certain pages with JavaScript errors or certain JavaScriptlibraries do not work with the tool
+- Contextual link text is not reviewed by the tool
+- Logical tab order is not reviewed by the tool
+- Rate of flashing is not measured by the tool in certain instances
+
