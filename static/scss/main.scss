@@ -269,6 +269,9 @@ a#skipnav {
 // pages/about.html
 // pages/domains.html
 /////////////////////////////////////////
+.total-desc {
+  font-size: 0.8em;
+}
 
 #analytics, #https, #about, #domain, #agency {
 
@@ -294,10 +297,6 @@ a#skipnav {
         }
         .total-value {
           font-size: 3em;
-        }
-
-        .total-desc {
-          font-size: 0.8em;
         }
       }
 
