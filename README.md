@@ -34,6 +34,12 @@ make watch
 
 The site can be easily deployed (by someone with credentials to the right server) through [Fabric](https://github.com/fabric/fabric), which requires Python 2.
 
+Install deployment dependencies:
+
+```
+pip install -r dev-requirements.txt
+```
+
 The Fabric script will expect a defined `ssh` configuration called `pulse`, which you should already have defined in your SSH configuration with the right hostname and key.
 
 To deploy to staging, switch to a Python 2 virtualenv with `fabric` installed, and run:
