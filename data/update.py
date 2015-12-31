@@ -38,8 +38,8 @@ import slugify
 
 # Output dirs.
 
-TABLE_DATA = "../static/data/tables"
-STATS_DATA = "../static/data"
+TABLE_DATA = "static/data/tables"
+STATS_DATA = "static/data"
 
 
 LABELS = {
@@ -676,11 +676,10 @@ def save_stats():
 
 
 def save_csv(rows, directory, filename):
-    f = open(os.path.join(directory, filename), 'w', newline='')
-    writer = csv.writer(f)
-    for row in rows:
-        writer.writerow(row)
-    f.close()
+    with open(os.path.join(directory, filename), 'w', newline='') as f:
+        writer = csv.writer(f)
+        for row in rows:
+            writer.writerow(row)
 
 
 def save_landing_data():

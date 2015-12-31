@@ -106,7 +106,7 @@ data:
 * Update Pulse's data from the `data/` directory:
 
 ```bash
-./update
+python data/update.py
 ```
 
 This will use the scanned data to create the high-level conclusions Pulse displays to users and makes available for download.
