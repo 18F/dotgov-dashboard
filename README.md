@@ -18,7 +18,7 @@ pip install -r requirements.txt
 gem install sass bourbon neat bitters
 ```
 
-* Now you can run the app:
+* Now you can run the app. Go to http://127.0.0.1:5000/ to see the homepage.
 
 ```bash
 make run
