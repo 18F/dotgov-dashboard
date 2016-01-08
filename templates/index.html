@@ -5,27 +5,79 @@
 {% block description %}{{ site.description }}{% endblock %}
 
 {% block content %}
-<div class="wrapper">
+
   <div class="hero">
-  	<h2>{{ site.name }}</h2>
   	<h3>{{ site.description }}</h3>
+    <form class="usa-search usa-search-big">
+      <div role="search">
+        <label for="search-field-big">Search by agency or domain:</label>
+        <input id="search-field-big" type="search" name="search">
+        <button type="submit">
+          <span class="usa-search-submit-text">Search</span>
+        </button>
+      </div>
+    </form>
   </div>
 
-  <div id="results">
-    <div class="https">
-    	<div class="https_chart"
-        data-width="287"
-      ></div>
-    	{% include 'includes/https/donut.html' %}
-      <a href="/https/domains/" class="button">View HTTPS Results</a>
+  <div id="wrapper">
+
+    <div id="results">
+
+      <div class="https">
+      	<div class="https_chart"
+          data-width="187"
+        ></div>
+      	{% include 'homepage/donut-https.html' %}
+        <div class="https_desc">
+          <h4>HTTPS</h4>
+          <p>The American people expect government websites to be secure and their interactions with those websites to be private. If websites use the unencrypted HTTP protocol, they are not providing a secure and private connection to visitors.</p>
+          <p>All publicly accessible federal websites are required to transition to using the encrypted HTTPS protocol, which protects website data from interception and alteration while it is sent to and from visitors.</p>
+          <a class="results-link" href="/https/domains/">View HTTPS results</a>
+        </div>
+      </div>
+      <div class="dap">
+        <div class="dap_chart"
+          data-width="187"
+        ></div>
+        {% include 'homepage/donut-analytics.html' %}
+        <div class="dap_desc">
+          <h4>Analytics</h4>
+          <p>All federal agencies need to understand how people use their websites, and adding analytics is an easy way to get useful and surprising data to make better decisions. People use many agency websites, so to share insights into visitor needs, all agencies should use the Digital Analytics Program.</p>
+          <p>This is a no-cost service that all agencies can opt into to collect anonymized visitor data, such as how many visitors use mobile devices. Participating agencies can also view detailed visitor data from fellow participants.</p>
+          <a class="results-link" href="/analytics/domains/">View Analytics results</a>
+        </div>
+      </div>
+
     </div>
-    <div class="dap">
-    	<div class="dap_chart"
-        data-width="287"
-      ></div>
-    	{% include 'includes/analytics/donut.html' %}
-      <a href="/analytics/domains/" class="button">View Analytics Results</a>
+
+    <div id="explore">
+
+      <h4>Explore the data</h4>
+
+      <section id="main-content" class="white-bkg">
+        <div class="wrapper">
+          <table class="agency responsive https">
+              <thead>
+                <tr>
+                  <th class="all" scope="col">Agency</th>
+                  <th class="all" scope="col">No. of Domains</th>
+                  <th class="min-tablet" scope="col">Uses HTTPS</th>
+                  <th class="min-tablet" scope="col">Enforces HTTPS</th>
+                  <th class="desktop" scope="col">Strict Transport Security (HSTS)</th>
+                  <th class="desktop" scope="col">SSL Labs (A- or higher)</th>
+                  <th class="desktop" scope="col">Participates in DAP?</th>
+                </tr>
+              </thead>
+          </table>
+        </div>
+      </section>
+
+      <script src="/static/js/homepage.js?{{ now() | date("%Y%m%j%H%M%S") }}"></script>
+
+
     </div>
+
+
   </div>
-</div>
+
 {% endblock %}

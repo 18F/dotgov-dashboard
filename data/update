@@ -297,18 +297,27 @@ def process_domains():
 
 
     if https_total > 0:
+
+      if analytics_total > 0:
+        dap_number = percent(analytics_stats['dap'], analytics_total)
+      else:
+        dap_number = 0
+
+
       row = {
         'Agency': agency,
         'Number of Domains': https_total,
         LABELS['https']: percent(https_stats['https'], https_total),
         LABELS['https_forced']: percent(https_stats['https_forced'], https_total),
         LABELS['hsts']: percent(https_stats['hsts'], https_total),
-        LABELS['grade_agencies']: percent(https_stats['grade'], https_total)
+        LABELS['grade_agencies']: percent(https_stats['grade'], https_total),
+        LABELS['dap']: dap_number
       }
       https_agencies.append(row)
       agency_map[slugify.slugify(agency)]['https'] = row
     else:
       agency_map[slugify.slugify(agency)]['https'] = None
+
 
     if analytics_total > 0:
       row = {

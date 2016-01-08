@@ -215,7 +215,8 @@ footer {
   padding: 15px 20px;
   color: white;
   text-align: center;
-  border-top: 1px solid #003366; }
+  border-top: 1px solid #003366;
+  clear: both; }
 
 .button {
   padding: 10px;
@@ -261,7 +262,7 @@ a#skipnav {
 
 .site-header .disclaimer {
   background-color: #003366;
-  padding: 10px 40px;
+  padding: 8px 40px;
   color: white;
   text-align: center; }
   @media screen and (max-width: 480px) {
@@ -321,7 +322,7 @@ a#skipnav {
       .site-header > nav #main-nav ul li {
         display: inline; }
         .site-header > nav #main-nav ul li a {
-          padding: 17px 24px; }
+          padding: 17px 19px; }
           .site-header > nav #main-nav ul li a:hover {
             color: #0059b3;
             background-color: white; }
@@ -386,79 +387,148 @@ a#skipnav {
   .site-header .overlay.is-visible {
     visibility: visible; }
 
+#home .site-header > nav {
+  border-bottom: none; }
+  #home .site-header > nav #main-nav {
+    max-width: 100%;
+    padding: 10px 22px; }
+#home #branding a {
+  font-size: 31px; }
+#home .usa-search {
+  margin: 0 auto;
+  max-width: 710px;
+  padding-bottom: 30px; }
+  #home .usa-search label {
+    font-size: 20px;
+    padding-top: 6px;
+    padding-right: 2%;
+    float: left; }
+  #home .usa-search input[type="search"] {
+    border-radius: 0;
+    color: #000;
+    float: left;
+    font-size: 1.3em;
+    height: 44px;
+    width: 45%; }
+  #home .usa-search button {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    background-color: #003366;
+    float: left;
+    font-size: 18px;
+    height: 44px;
+    width: 116px; }
+    #home .usa-search button:hover {
+      background-color: #02bfe7;
+      color: #000; }
 #home .hero {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 65.88078%;
-  margin-left: 17.05961%;
   text-align: center;
   color: white;
-  padding-top: 40px; }
-  #home .hero:last-child {
-    margin-right: 0; }
+  padding: 40px 20px 90px; }
+  @media (min-width: 600px) {
+    #home .hero {
+      padding-bottom: 60px; } }
   #home .hero h2 {
     font-size: 6.125em;
     font-weight: 300; }
   #home .hero h3 {
-    font-size: 1.75em;
-    font-weight: 100;
-    padding-top: 15px; }
+    display: inline-block;
+    font-size: 24px;
+    max-width: 620px;
+    padding-bottom: 8px; }
+    @media (min-width: 600px) {
+      #home .hero h3 {
+        font-size: 36px;
+        padding-bottom: 50px;
+        padding-top: 30px; } }
+#home #wrapper {
+  background: #fff;
+  clear: both;
+  color: #000; }
+  #home #wrapper:after {
+    content: "";
+    display: table;
+    clear: both; }
+  #home #wrapper h4 {
+    font-size: 2em;
+    margin-bottom: 0.5em; }
 #home #results {
+  clear: both;
+  margin: 0 auto;
+  max-width: 840px;
+  padding: 40px; }
+  #home #results .https, #home #results .dap {
+    margin-bottom: 10px; }
+    #home #results .https .total-value, #home #results .dap .total-value {
+      font-size: 3em; }
+    #home #results .https .total-desc, #home #results .dap .total-desc {
+      font-size: 0.8em; }
+    #home #results .https .https_chart, #home #results .https .dap_chart, #home #results .dap .https_chart, #home #results .dap .dap_chart {
+      margin: 0 auto;
+      padding-bottom: 40px;
+      width: 200px; }
+    @media (min-width: 600px) {
+      #home #results .https .https_chart, #home #results .dap .https_chart {
+        float: left;
+        margin-right: 25px; } }
+    @media (min-width: 600px) {
+      #home #results .https .dap_chart, #home #results .dap .dap_chart {
+        float: right;
+        margin-left: 25px; } }
+    #home #results .https .https_desc,
+    #home #results .https .dap_desc, #home #results .dap .https_desc,
+    #home #results .dap .dap_desc {
+      padding: 27px 0 0;
+      vertical-align: top; }
+    #home #results .https p, #home #results .dap p {
+      padding-bottom: 1em; }
+#home #explore {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 65.88078%;
-  margin-left: 17.05961%;
+  width: 82.94039%;
+  margin-left: 8.5298%;
+  clear: both;
   padding: 40px 0; }
-  #home #results:last-child {
+  #home #explore:last-child {
     margin-right: 0; }
-  #home #results .https, #home #results .dap {
-    float: left;
-    display: block;
-    margin-right: 3.57866%;
-    width: 48.21067%;
-    display: -webkit-box;
-    display: -moz-box;
-    display: box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -moz-box-orient: vertical;
-    box-orient: vertical;
-    -webkit-flex-direction: column;
-    -moz-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-direction: column;
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    box-align: center;
-    -webkit-align-items: center;
-    -moz-align-items: center;
-    -ms-align-items: center;
-    -o-align-items: center;
-    align-items: center;
-    -ms-flex-align: center;
-    -webkit-box-pack: center;
-    -moz-box-pack: center;
-    box-pack: center;
-    -webkit-justify-content: center;
-    -moz-justify-content: center;
-    -ms-justify-content: center;
-    -o-justify-content: center;
-    justify-content: center;
-    -ms-flex-pack: center;
-    margin-bottom: 40px;
-    text-align: center; }
-    #home #results .https:last-child, #home #results .dap:last-child {
-      margin-right: 0; }
-    @media (max-width: 970px) {
-      #home #results .https, #home #results .dap {
-        width: 100%; } }
-    #home #results .https .total-value, #home #results .dap .total-value {
-      font-size: 5em; }
+  #home #explore .dataTables_wrapper {
+    padding-top: 40px; }
+    #home #explore .dataTables_wrapper .dataTables_length {
+      padding-left: 0; }
+  #home #explore #main-content .tab-menu {
+    margin-top: 40px;
+    width: 100%; }
+    #home #explore #main-content .tab-menu .tab {
+      float: left;
+      font-size: 1.5em;
+      margin: 0;
+      padding: 30px 0;
+      text-align: center;
+      width: 33.33%; }
+    #home #explore #main-content .tab-menu a.tab {
+      background-color: #0059b3;
+      color: white; }
+      #home #explore #main-content .tab-menu a.tab:hover, #home #explore #main-content .tab-menu a.tab:focus {
+        background-color: #0073e6;
+        color: white; }
+  #home #explore #main-content.white-bkg {
+    background-color: white; }
+    #home #explore #main-content.white-bkg a {
+      color: #0066CC;
+      font-weight: 900; }
+      #home #explore #main-content.white-bkg a:hover, #home #explore #main-content.white-bkg a:focus {
+        color: #0066CC;
+        text-decoration: underline; }
+
+.results-link {
+  color: #0066CC;
+  border: 1px solid #0066CC;
+  margin-top: 3px;
+  padding: 8px 16px;
+  display: inline-block; }
+  .results-link:hover {
+    color: #0066CC; }
 
 #analytics #content > header, #https #content > header, #about #content > header, #domain #content > header, #agency #content > header {
   max-width: 68em;

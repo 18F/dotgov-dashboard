@@ -1,3 +1,5 @@
+scss_files: "static/scss/*.scss"
+
 exclude: 'static/scss/lib/**’
 
 linters:

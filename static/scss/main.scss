@@ -31,6 +31,7 @@ h2 { font-size:   1.5em;    }
 h3 { font-size:   1.25em;   }
 p  { font-size:   1.0em;    }
 
+
 // Generic
 /////////////////////////////////////////
 
@@ -52,6 +53,7 @@ footer {
   color: white;
   text-align: center;
   border-top: 1px solid $dark-blue;
+  clear: both;
 }
 
 .button {
@@ -100,7 +102,7 @@ a#skipnav {
 
   .disclaimer {
     background-color: $dark-blue;
-    padding: 10px 40px;
+    padding: 8px 40px;
     color: white;
     text-align: center;
     @include media($small) {
@@ -153,7 +155,7 @@ a#skipnav {
           display: inline;
 
           a {
-            padding: 17px 24px;
+            padding: 17px 19px;
             &:hover {
               color: $medium-blue;
               background-color: white;
@@ -216,50 +218,204 @@ a#skipnav {
 /////////////////////////////////////////
 
 #home {
-  .hero {
-    @include span-columns(8);
-    @include shift(2);
+  .site-header {
+    > nav {
+      border-bottom: none;
 
+      #main-nav {
+        max-width: 100%;
+        padding: 10px 22px;
+      }
+    }
+  }
+  #branding a {
+    font-size: 31px;
+  }
+  .usa-search {
+    margin: 0 auto;
+    max-width: 710px;
+    padding-bottom: 30px;
+
+    label {
+      font-size: 20px;
+      padding-top: 6px;
+      padding-right: 2%;
+      float: left;
+    }
+
+    input[type="search"] {
+      border-radius: 0;
+      color: #000;
+      float: left;
+      font-size: 1.3em;
+      height: 44px;
+      width: 45%;
+    }
+
+    button {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      background-color: $dark-blue;
+      float: left;
+      font-size: 18px;
+      height: 44px;
+      width: 116px;
+
+      &:hover {
+        background-color: #02bfe7;
+        color: #000;
+      }
+    }
+  }
+  .hero {
     text-align: center;
     color: white;
-    padding-top: 40px;
+    padding: 40px 20px 90px;
+
+    @media (min-width: 600px) {
+      padding-bottom: 60px;
+    }
 
     h2 {
       font-size: $base-font-size * 7;
       font-weight: 300;
     }
     h3 {
-      font-size: $base-font-size * 2;
-      font-weight: 100;
-      padding-top: 15px;
+      display: inline-block;
+      font-size: 24px;
+      max-width: 620px;
+      padding-bottom: 8px;
+
+      @media (min-width: 600px) {
+        font-size: 36px;
+        padding-bottom: 50px;
+        padding-top: 30px;
+      }
+    }
+  }
+
+  #wrapper {
+    @include clearfix();
+
+    background: #fff;
+    clear: both;
+    color: #000;
+
+    h4 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
     }
   }
 
   #results {
-    @include span-columns(8);
-    @include shift(2);
-
-    padding: 40px 0;
+    clear: both;
+    margin: 0 auto;
+    max-width: 840px;
+    padding: 40px;
 
     .https, .dap {
-      @include span-columns(4 of 8);
-      @media (max-width: 970px) {
-        width: 100%
-      }
-
-      @include display(flex);
-      @include flex-direction(column);
-      @include align-items(center);
-      @include justify-content(center);
-
-      margin-bottom: 40px;
-      text-align: center;
+      margin-bottom: 10px;
 
       .total-value {
-        font-size: 5em;
+        font-size: 3em;
+      }
+      .total-desc {
+        font-size: 0.8em;
       }
 
+      .https_chart, .dap_chart {
+        margin: 0 auto;
+        padding-bottom: 40px;
+        width: 200px;
+      }
+
+      .https_chart {
+        @media (min-width: 600px) {
+          float: left;
+          margin-right: 25px;
+        }
+      }
+
+      .dap_chart {
+        @media (min-width: 600px) {
+          float: right;
+          margin-left: 25px;
+        }
+      }
+
+      .https_desc,
+      .dap_desc {
+        padding: 27px 0 0;
+        vertical-align: top;
+      }
+
+      p {
+        padding-bottom: 1em;
+      }
     }
+  }
+
+  #explore {
+    @include span-columns(10);
+    @include shift(1);
+
+    clear: both;
+    padding: 40px 0;
+
+    .dataTables_wrapper {
+      padding-top: 40px;
+
+      .dataTables_length {
+        padding-left: 0;
+      }
+    }
+
+    #main-content {
+      .tab-menu {
+        margin-top: 40px;
+        width: 100%;
+        .tab {
+          float: left;
+          font-size: 1.5em;
+          margin: 0;
+          padding: 30px 0;
+          text-align: center;
+          width: 33.33%;
+        }
+        a.tab {
+          background-color: $medium-blue;
+          color: white;
+          &:hover, &:focus {
+            background-color: lighten($medium-blue, 10%);
+            color: white;
+          }
+        }
+      }
+
+      &.white-bkg {
+        background-color: white;
+        a {
+          color: $light-blue;
+          font-weight: 900;
+          &:hover, &:focus {
+            color: $light-blue;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.results-link {
+  color: $light-blue;
+  border: 1px solid $light-blue;
+  margin-top: 3px;
+  padding: 8px 16px;
+  display: inline-block;
+
+  &:hover {
+    color: $light-blue;
   }
 }
 
