@@ -18,7 +18,7 @@ pip install -r requirements.txt
 gem install sass bourbon neat bitters
 ```
 
-* Now you can run the app:
+* Now you can run the app. Go to http://127.0.0.1:5000/ to see the homepage.
 
 ```bash
 make run
@@ -33,6 +33,12 @@ make watch
 ## Deploying the site
 
 The site can be easily deployed (by someone with credentials to the right server) through [Fabric](https://github.com/fabric/fabric), which requires Python 2.
+
+Install deployment dependencies:
+
+```
+pip install -r dev-requirements.txt
+```
 
 The Fabric script will expect a defined `ssh` configuration called `pulse`, which you should already have defined in your SSH configuration with the right hostname and key.
 
@@ -100,7 +106,7 @@ data:
 * Update Pulse's data from the `data/` directory:
 
 ```bash
-./update
+python data/update.py
 ```
 
 This will use the scanned data to create the high-level conclusions Pulse displays to users and makes available for download.
