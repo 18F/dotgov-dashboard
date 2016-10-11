@@ -2250,19 +2250,6 @@
       "errors": 28
     },
     {
-      "agency": "Non-Federal Agency",
-      "domain": "jusfc.gov",
-      "branch": "Non-federal",
-      "canonical": "http://jusfc.gov",
-      "errorlist": {
-        "HTML Attribute Errors": 1,
-        "Color Contrast Errors": 0,
-        "Missing Image Descriptions": 1,
-        "Form Errors": 0
-      },
-      "errors": 2
-    },
-    {
       "agency": "Department of Commerce",
       "domain": "trade.gov",
       "branch": "Executive",
@@ -3574,19 +3561,6 @@
         "Form Errors": 0
       },
       "errors": 9
-    },
-    {
-      "agency": "Non-Federal Agency",
-      "domain": "heritageabroad.gov",
-      "branch": "Non-federal",
-      "canonical": "http://heritageabroad.gov",
-      "errorlist": {
-        "HTML Attribute Errors": 9,
-        "Color Contrast Errors": 0,
-        "Missing Image Descriptions": 34,
-        "Form Errors": 0
-      },
-      "errors": 43
     },
     {
       "agency": "Department of State",
@@ -8390,19 +8364,6 @@
       "domain": "medalofvalor.gov",
       "branch": "Executive",
       "canonical": "http://medalofvalor.gov",
-      "errorlist": {
-        "HTML Attribute Errors": 0,
-        "Color Contrast Errors": 0,
-        "Missing Image Descriptions": 0,
-        "Form Errors": 0
-      },
-      "errors": 0
-    },
-    {
-      "agency": "Non-Federal Agency",
-      "domain": "wmatc.gov",
-      "branch": "Non-federal",
-      "canonical": "http://wmatc.gov",
       "errorlist": {
         "HTML Attribute Errors": 0,
         "Color Contrast Errors": 0,
