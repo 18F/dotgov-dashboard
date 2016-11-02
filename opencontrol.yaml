@@ -1,0 +1,16 @@
+schema_version: "1.0.0" 
+name: pulse.cio.gov
+metadata:
+  description: "Tracking how the .gov domain space is doing at best practices and federal requirements. "
+  maintainers:
+    - pulse@cio.gov
+dependencies:
+  systems:
+    - url: https://github.com/18F/cg-compliance
+      revision: master
+  standards:
+    - url: https://github.com/opencontrol/NIST-800-53-Standards
+      revision: master
+  certifications:
+    - url: https://github.com/opencontrol/FedRAMP-Certifications
+      revision: master
