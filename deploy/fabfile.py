@@ -46,7 +46,6 @@ def make_current():
 
 def links():
   run("ln -s %s/config.env %s/data/config.env" % (shared_path, version_path))
-  run("ln -s %s/data/db.json %s/data/db.json" % (shared_path, version_path))
   run("ln -s %s/data/output %s/data/output" % (shared_path, version_path))
 
 # Only done on cold deploy.
