@@ -275,7 +275,7 @@ def load_scan_data(domains):
     sub_dir = os.path.split(scan_dir)[-1]
     source = SUBDOMAIN_SOURCES[sub_dir]
 
-    # We only scan subdomains with pshtt.
+    # We scan subdomains with pshtt only.
     source_csv = os.path.join(SUBDOMAIN_SCAN_DATA, sub_dir, "results", "pshtt.csv")
 
     headers = []
@@ -289,6 +289,10 @@ def load_scan_data(domains):
         domain = row[1].lower()
         if not domains.get(domain):
           print("[%s][%s] Skipping, not a subdomain of a tracked domain." % (source, subdomain))
+          continue
+
+        if domains[domain]['branch'] != 'executive':
+          print("[%s][%s] Skipping, not displaying data on subdomains of legislative or judicial domains." % (source, subdomain))
           continue
 
         dict_row = {}
