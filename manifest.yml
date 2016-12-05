@@ -5,6 +5,6 @@ applications:
   instances: 2
   buildpack: python_buildpack
 - name: pulse-staging
-  memory: 512M
+  memory: 128M
   instances: 1
   buildpack: python_buildpack
