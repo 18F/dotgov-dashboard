@@ -9,6 +9,9 @@ staging:
 production:
 	cd deploy/ && fab deploy --set environment=production && cd ..
 
+cg_production:
+	make data_init && cf target -o gsa-ogp-pulse -s pulse && cf push
+
 debug:
 	DEBUG=true python pulse.py
 
