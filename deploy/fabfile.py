@@ -11,7 +11,7 @@ env.hosts = ["site@pulse"]
 repo = "https://github.com/18F/pulse"
 
 if environment == "production":
-  branch = "production"
+  branch = "master"
   port = 3000
 else:
   environment = "staging"
