@@ -48,6 +48,9 @@ import data.processing
 # --gather=[skip,here]
 #     skip: skip gathering, assume CSVs are locally cached
 #     here: run the default full gather
+#
+# --just-download: Download the latest result data from S3 and stop.
+# --just-gather: Gather domains and then stop. (Useful for debugging.)
 
 def run(options):
   # If this is just being used to download production data, do that.
@@ -73,6 +76,11 @@ def run(options):
       print()
       print("Subdomain gathering complete.")
       print()
+
+      if options.get("just-gather", False):
+        print("Asked for gathering only, stopping.")
+        exit(0)
+
     elif gather_mode == "skip":
       print("Skipping subdomain gathering.")
       print()

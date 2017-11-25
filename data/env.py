@@ -40,11 +40,12 @@ SCANNERS = scanner_string.split(",")
 GATHER_SUFFIXES = os.environ.get("GATHER_SUFFIXES", ".gov,.fed.us")
 
 # names and options must be in corresponding order
-GATHERER_NAMES = ["censys", "dap", "eot2016", "parents"]
+GATHERER_NAMES = ["censys-snapshot", "dap", "eot2016", "rdns-snapshot", "parents"]
 GATHERER_OPTIONS = [
-  "--export",
+  "--censys-snapshot=%s" % META["data"]["censys_subdomains_url"],
   "--dap=%s" % META["data"]["analytics_subdomains_url"],
   "--eot2016=%s" % META["data"]["eot_subdomains_url"],
+  "--rdns-snapshot=%s" % META["data"]["rdns_subdomains_url"],
   "--parents=%s" % DOMAINS
 ]
 
