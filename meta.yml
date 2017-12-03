@@ -19,7 +19,13 @@ data:
   analytics_subdomains_url: "https://analytics.usa.gov/data/live/sites-extended.csv"
 
   # Preprocessed CSV where we source End of Term Archive data from.
-  eot_subdomains_url: https://github.com/GSA/data/raw/master/end-of-term-archive-csv/eot-2016-seeds.csv
+  eot_subdomains_url: https://github.com/GSA/data/raw/master/dotgov-websites/eot-2016-snapshot.csv
+
+  # Preprocessed CSV with a snapshot of filtered Censys.io search result data.
+  censys_subdomains_url: https://github.com/GSA/data/raw/master/dotgov-websites/censys-federal-snapshot.csv
+
+  # Preprocessed CSV with a snapshot of filtered Rapid7 Reverse DNS data.
+  rdns_subdomains_url: https://github.com/GSA/data/raw/master/dotgov-websites/rdns-federal-snapshot.csv
 
 a11y:
   config: https://github.com/18F/pulse/raw/master/data/a11y_config/pa11y_config.json

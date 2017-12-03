@@ -276,8 +276,12 @@ def load_domain_data():
         # check each source
         sources = []
         for i, source in enumerate(GATHERER_NAMES):
-          if boolean_for(row[i+2]):
-            sources.append(source)
+          try:
+            if boolean_for(row[i+2]):
+              sources.append(source)
+          except IndexError:
+            print("ERROR: Likely mismatch between sources in gathered.csv, and in data/env.py.")
+            exit(1)
 
         gathered_subdomain_map[subdomain_name] = sources
 
