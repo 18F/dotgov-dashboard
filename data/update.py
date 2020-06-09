@@ -41,33 +41,18 @@ LOGGER = logger.get_logger(__name__)
 #    - TODO: Consider moving from aws CLI to Python library.
 
 
-
 # Options:
-# --date: override date, defaults to contents of meta.json
-# --scan=[skip,download,here]
+# scan_mode=[skip,download,here]
 #     skip: skip all scanning, assume CSVs are locally cached
 #     download: download scan data from S3
 #     here: run the default full scan
-# --upload: upload scan data and resulting db.json anything to S3
-# --gather=[skip,here]
+# gather_mode=[skip,here]
 #     skip: skip gathering, assume CSVs are locally cached
 #     here: run the default full gather
+# options
+#     options to pass along to scan and gather operations
 
-def run(options):
-  # If this is just being used to download production data, do that.
-  if options.get("just-download", False):
-    download_s3()
-    return
-
-  # Definitive scan date for the run.
-  today = datetime.datetime.strftime(datetime.datetime.now(), "%Y-%m-%d")
-
-  # 1. Download scan data, do a new scan, or skip altogether.
-  scan_mode = options.get("scan", "skip")
-
-  # Whether to gather domains (defaults to doing so).
-  gather_mode = options.get("gather", "here")
-
+def update(scan_mode, gather_mode, options):
   if scan_mode == "here":
     # 1a. Gather .gov federal subdomains.
     if gather_mode == "here":
@@ -90,33 +75,6 @@ def run(options):
     LOGGER.info("Downloading latest production scan data from S3.")
     download_s3()
     LOGGER.info("Download complete.")
-
-  # Sanity check to make sure we have what we need.
-  if not os.path.exists(os.path.join(PARENTS_RESULTS, "meta.json")):
-    LOGGER.info("No scan metadata downloaded, aborting.")
-    exit()
-
-  # Date can be overridden if need be, but defaults to meta.json.
-  if options.get("date", None) is not None:
-    the_date = options.get("date")
-  else:
-    # depends on YYYY-MM-DD coming first in meta.json time format
-    scan_meta = ujson.load(open("data/output/parents/results/meta.json"))
-    the_date = scan_meta['start_time'][0:10]
-
-
-  # 2. Process and load data into Pulse's database.
-  LOGGER.info("[%s] Loading data into Pulse." % the_date)
-  data.processing.run(the_date, options)
-  LOGGER.info("[%s] Data now loaded into Pulse." % the_date)
-
-  # 3. Upload data to S3 (if requested).
-  if options.get("upload", False):
-    LOGGER.info("[%s] Syncing scan data and database to S3." % the_date)
-    upload_s3(the_date)
-    LOGGER.info("[%s] Scan data and database now in S3." % the_date)
-
-  LOGGER.info("[%s] All done." % the_date)
 
 
 # Upload the scan + processed data to /live/ and /archive/ locations by date.
@@ -306,9 +264,3 @@ def shell_out(command, env=None):
         LOGGER.critical("Error running %s." % (str(command)))
         exit(1)
         return None
-
-
-### Run when executed.
-
-if __name__ == '__main__':
-    run(options())

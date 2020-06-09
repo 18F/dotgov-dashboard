@@ -27,6 +27,7 @@ setuptools.setup(
         'ujson==1.35',
         'waitress==1.0.1',
         'flask-compress==1.4.0',
+        'click==6.7',
     ],
     extras_require={
         'development': [
@@ -36,4 +37,9 @@ setuptools.setup(
             'pytest-cov==2.5.1',
         ],
     },
+    entry_points='''
+        [console_scripts]
+        pulse=data.cli:main
+    '''
+
 )

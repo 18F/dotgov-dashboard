@@ -27,6 +27,11 @@ Pulse is a [Flask](http://flask.pocoo.org/) app written for **Python 3.5 and up*
 pip install -r requirements.txt
 ```
 
+* If developing Pulse, you will also need the development requirements
+```bash
+pip install .[development]
+```
+
 * If developing the stylesheets, you will also need [Sass](http://sass-lang.com/), [Bourbon](http://bourbon.io/), [Neat](http://neat.bourbon.io/), and [Bitters](http://bitters.bourbon.io/).
 
 ```bash
@@ -88,7 +93,7 @@ And link it to AWS credentials that allow authorized write access to the `pulse.
 From the Pulse root directory:
 
 ```
-python -m data.update
+pulse run
 ```
 
 This will kick off the `domain-scan` scanning process for HTTP/HTTPS and DAP participation, using the `.gov` domain list as specified in `meta.yml` for the base set of domains to scan.

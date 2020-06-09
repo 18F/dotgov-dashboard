@@ -39,19 +39,19 @@ clean:
 # Run a fresh scan, update the database, and upload data to S3.
 # Enable Lambda mode, using Lambda AWS profile set up in production.
 update_production:
-	python -m data.update --scan=here --upload --lambda --lambda-profile=lambda
+	pulse run --scan here --upload --lambda --lambda-profile lambda
 
 # Staging data update process:
 #
 # Download last production scan data, update the database.
 update_staging:
-	python -m data.update --scan=download
+	pulse run --scan download
 
 # Development data update process:
 #
 # Don't scan or download latest data (rely on local cache), update database.
 update_development:
-	python -m data.update --scan=skip
+	pulse run --scan skip
 
 # downloads latest snapshot of data locally
 # Pending cloud.gov production bucket:
@@ -59,4 +59,4 @@ update_development:
 # Pending cloud.gov backup bucket:
 # cg-72ce4caf-d81b-4771-9b96-3624b5554587
 data_init:
-	python -m data.update --just-download
+	pulse download
